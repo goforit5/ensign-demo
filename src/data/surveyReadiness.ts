@@ -1,0 +1,148 @@
+import type { SurveyCategory } from '../types/audit';
+
+export const surveyCategories: SurveyCategory[] = [
+  {
+    name: 'Documentation',
+    score: 87,
+    items_compliant: 52,
+    items_total: 60,
+    vulnerabilities: [
+      'F-641: Accuracy of Assessments — 3 facilities with late MDS submissions',
+      'F-656: Comprehensive Care Plans — 5 care plans missing required updates',
+      'F-657: Care Plan Timing — 2 initial care plans beyond 48-hour window',
+    ],
+    icon: 'FileText',
+  },
+  {
+    name: 'Licenses & Certifications',
+    score: 96,
+    items_compliant: 48,
+    items_total: 50,
+    vulnerabilities: [
+      'F-726: Sufficient Staff Competency — 2 CNA certifications expiring within 30 days',
+    ],
+    icon: 'Award',
+  },
+  {
+    name: 'Policy Compliance',
+    score: 82,
+    items_compliant: 41,
+    items_total: 50,
+    vulnerabilities: [
+      'F-758: Free of Unnecessary Medications — 8 GDR reviews overdue across 6 facilities',
+      'F-690: Urinary Catheter — 4 catheter policies not followed',
+      'F-686: Pressure Injuries — 3 prevention protocols missing',
+      'F-689: Free of Accident Hazards — 5 fall prevention plans outdated',
+    ],
+    icon: 'Shield',
+  },
+  {
+    name: 'Life Safety',
+    score: 94,
+    items_compliant: 47,
+    items_total: 50,
+    vulnerabilities: [
+      'K-291: Emergency Lighting — 1 facility pending generator test documentation',
+      'K-353: Sprinkler System — Annual inspection due at Valley Healthcare and Lone Star',
+    ],
+    icon: 'Flame',
+  },
+  {
+    name: 'Incident Management',
+    score: 78,
+    items_compliant: 39,
+    items_total: 50,
+    vulnerabilities: [
+      'F-609: Reporting — 6 incidents with late state agency notification',
+      'F-689: Accident Investigation — 4 post-fall investigations incomplete',
+      'F-610: Alleged Violations — 2 investigations exceeding 5-day requirement',
+      'F-600: Free from Abuse — 1 facility missing abuse prevention in-service',
+    ],
+    icon: 'AlertOctagon',
+  },
+  {
+    name: 'Staff Training',
+    score: 91,
+    items_compliant: 46,
+    items_total: 50,
+    vulnerabilities: [
+      'F-940: Training Requirements — 12 staff overdue for annual dementia training',
+      'F-726: Competency — 3 new hires missing skills validation',
+    ],
+    icon: 'GraduationCap',
+  },
+  {
+    name: 'Care Plans',
+    score: 79,
+    items_compliant: 40,
+    items_total: 50,
+    vulnerabilities: [
+      'F-656: Comprehensive Care Plans — 7 residents missing updated care plans',
+      'F-657: Care Plan Timing — 3 care plan reviews overdue',
+      'F-658: Services Provided Meet Standards — 4 interventions not matching care plan',
+      'F-659: Qualified Persons — 2 care plans missing required disciplines',
+    ],
+    icon: 'ClipboardList',
+  },
+  {
+    name: 'Environmental',
+    score: 92,
+    items_compliant: 46,
+    items_total: 50,
+    vulnerabilities: [
+      'F-584: Safe Environment — 2 facilities with temperature monitoring gaps',
+      'F-585: Comfortable Environment — 1 HVAC maintenance overdue',
+    ],
+    icon: 'Building',
+  },
+  {
+    name: 'Medication Management',
+    score: 83,
+    items_compliant: 42,
+    items_total: 50,
+    vulnerabilities: [
+      'F-760: Medication Errors — 3 facilities with timing compliance below 90%',
+      'F-757: Drug Regimen Review — 6 monthly pharmacist reviews overdue',
+      'F-761: Label/Store Drugs — 1 facility with expired medication found on unit',
+      'F-755: Pharmacy Services — 2 high-alert medication double-check failures',
+    ],
+    icon: 'Pill',
+  },
+  {
+    name: 'Resident Assessment',
+    score: 88,
+    items_compliant: 44,
+    items_total: 50,
+    vulnerabilities: [
+      'F-636: MDS Accuracy — 4 assessments with coding errors identified',
+      'F-637: Assessment Frequency — 2 quarterly assessments overdue',
+      'F-697: Pain Assessment — 3 residents using inappropriate pain scale for cognitive status',
+    ],
+    icon: 'ClipboardCheck',
+  },
+  {
+    name: 'Infection Surveillance',
+    score: 76,
+    items_compliant: 38,
+    items_total: 50,
+    vulnerabilities: [
+      'F-880: Infection Prevention — Hand hygiene compliance below 80% at 3 facilities',
+      'F-881: Antibiotic Stewardship — 5 empiric therapies without 72-hour reassessment',
+      'F-882: Infection Preventionist — 1 facility IP position vacant >30 days',
+      'F-883: Surveillance — 2 facilities with incomplete monthly infection tracking',
+    ],
+    icon: 'Bug',
+  },
+  {
+    name: 'Quality Metrics',
+    score: 90,
+    items_compliant: 45,
+    items_total: 50,
+    vulnerabilities: [
+      'F-944: QAPI Program — 2 facilities missed monthly QAPI meetings',
+      'F-945: QAPI Plan — 1 facility PIP stalled without measurable improvement',
+      'F-946: Quality Assessment — 3 quality indicator thresholds breached without corrective action',
+    ],
+    icon: 'BarChart3',
+  },
+];

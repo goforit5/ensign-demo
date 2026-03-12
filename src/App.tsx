@@ -1,37 +1,35 @@
 import { Routes, Route } from 'react-router-dom';
-import { TabBar } from './components/navigation/TabBar';
-import DashboardView from './pages/DashboardView';
-import RunAuditsView from './pages/RunAuditsView';
-import AuditDetail from './pages/AuditDetail';
-import ActionItems from './pages/ActionItems';
-import ReportsView from './pages/ReportsView';
+import { ModalProvider } from './components/ui/Widgets';
+import Layout from './components/layout/Layout';
+import { useAgentSimulation } from './hooks/useAgentSimulation';
+import CommandCenter from './pages/CommandCenter';
+import ExceptionQueue from './pages/ExceptionQueue';
+import ClinicalCommand from './pages/ClinicalCommand';
+import FacilityDetail from './pages/FacilityDetail';
+import SurveyReadiness from './pages/SurveyReadiness';
+import AgentWorkLedger from './pages/AgentWorkLedger';
 
-function App() {
+function AppContent() {
+  useAgentSimulation();
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <h1 className="text-xl font-bold text-gray-900">Ensign Clinical Audit Platform</h1>
-          </div>
-        </div>
-      </header>
-
-      <TabBar />
-
+    <Layout>
       <Routes>
-        <Route path="/" element={<DashboardView />} />
-        <Route path="/run-audits" element={<RunAuditsView />} />
-        <Route path="/audit/:auditId" element={<AuditDetail />} />
-        <Route path="/action-items" element={<ActionItems />} />
-        <Route path="/reports" element={<ReportsView />} />
+        <Route path="/" element={<CommandCenter />} />
+        <Route path="/exceptions" element={<ExceptionQueue />} />
+        <Route path="/clinical" element={<ClinicalCommand />} />
+        <Route path="/facility/:id" element={<FacilityDetail />} />
+        <Route path="/survey" element={<SurveyReadiness />} />
+        <Route path="/agents" element={<AgentWorkLedger />} />
       </Routes>
-
-      <footer className="fixed bottom-0 left-0 right-0 bg-yellow-50 border-t border-yellow-200 py-2 text-center z-50">
-        <span className="text-sm font-medium text-yellow-800">Demo Environment — All data is synthetic</span>
-      </footer>
-    </div>
+    </Layout>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <ModalProvider>
+      <AppContent />
+    </ModalProvider>
+  );
+}
